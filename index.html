@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AI 분류기 (카메라 실시간 + 파일 적용)</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- 반드시 TM 전용 라이브러리를 함께 로드 -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.18.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>AI 분류기</h1>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <h2>📸 카메라 (실시간)</h2>
+      <div id="webcam-container" class="webcam"></div>
+      <div class="status">
+        <span id="cam-label">—</span>
+        <span id="cam-conf">—</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>📂 파일 업로드 (적용하기로 분석)</h2>
+      <div class="uploader">
+        <input type="file" id="upload" accept="image/*" />
+        <button id="analyzeBtn" class="btn">적용하기</button>
+      </div>
+      <img id="preview" alt="미리보기" />
+      <div class="status">
+        <span id="file-label">—</span>
+        <span id="file-conf">—</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>🖼️ 결과 이미지</h2>
+      <img id="result" alt="결과 이미지" />
+    </section>
+  </main>
+</body>
+</html>
